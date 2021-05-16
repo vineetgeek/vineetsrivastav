@@ -1,0 +1,287 @@
+@charset "utf-8";
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    background: #000000;
+}
+
+
+/*linear-gradient(#7d6cfc, #c635ea)*/
+
+.navigation-conatiner {
+    position: relative;
+    max-width: 100%;
+    padding: 10px;
+    margin: 20px 30px;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 40px;
+    font-size: 36px;
+    line-height: 60px;
+    padding: 0px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo img{
+    height: 50px;
+    width: 330px;
+}
+.menu {
+    float: right;
+}
+
+.fix {
+    clear: both;
+}
+
+.menu ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.menu ul li a {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+}
+
+.content-container {
+    position: relative;
+    max-width: 100%;
+    margin: 90px 30px 30px;
+}
+
+.person {
+    position: absolute;
+    bottom: 10%;
+    left: 52%;
+    height: 469px;
+    width: auto;
+}
+
+.person img {
+    max-height: 200%;
+    max-width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0px;
+    padding: 0;
+    color: #fff;
+    text-transform: uppercase;
+    transform: translate(-0%, -5%);
+    letter-spacing: 0.5px;
+    color: transparent;
+}
+
+h1:before {
+    content: attr(data-text);
+    position: absolute;
+    color: #fff;
+    overflow: hidden;
+    border-right: 1px solid #fff;
+    animation: type 5s steps(31) infinite;
+    white-space: nowrap;
+}
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0px 30px;
+    color: rgba(188, 188, 188, 1.00);
+}
+
+.text {
+    left: 0px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 469px;
+}
+
+input[type=button] {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    outline: none;
+    transition: transform 80ms ease-in;
+}
+
+input[type=button]:active {
+    transform: scale(0.95);
+}
+
+.action {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a13dea;
+    font-size: 2em;
+    transition: 0.3s ease-in-out;
+}
+
+.action.active span {
+    transform: rotate(135deg);
+}
+
+.action ul {
+    position: absolute;
+    bottom: 55px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.action.active ul {
+    bottom: 65px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.action ul li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.action ul li:hover {
+    font-weight: 600;
+}
+
+.action ul li i {
+    margin-right: 10px;
+    opacity: 0.2;
+    font-size: 2em;
+    transform: scale(0.8);
+}
+
+.action ul li:hover i {
+    opacity: 1;
+}
+
+.social {
+    position: absolute;
+    bottom: 20px;
+}
+
+.social ul li {
+    list-style: none;
+}
+
+.social ul li a {
+    text-decoration: none;
+    color: rgba(232, 232, 232, 1.00);
+}
+
+.social i {
+    padding: 13px 20px;
+    font-size: 15px;
+}
+
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-instagram:hover,
+.fa-whatsapp:hover {
+    color: #FFFFFF;
+    font-size: 19px;
+}
+
+.popup {
+    position: fixed;
+    background: rgb(214, 214, 214);
+    position: absolute;
+    width: 600px;
+    padding: 60px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 0 0 100vh rgba(46, 45, 46, 0.95);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.popup.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup h2 {
+    font-size: 50px;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+}
+
+.popup .close {
+    position: absolute;
+    text-transform: capitalize;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
